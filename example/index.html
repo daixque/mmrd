@@ -1,0 +1,62 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src='../lib/mmrd.js'></script>
+	<script type="text/javascript">
+
+function out(msg) {
+	$('#out').append('<div>' + msg + '</div>');
+}
+
+var map = function() {
+  var words = this.text.split(' ');
+  words.forEach(function(word) {
+   emit(word, 1);
+  });
+};
+
+var reduce = function(key, values) {
+  var result = 0;
+  values.forEach(function(v) {
+  	result += v;
+  });
+  return result;
+};
+
+$(document).ready(function(){
+  // map test
+  (function() {
+    out("Word count / Map test");
+    var doc = { text: "foo bar baz" };
+    mmrd.map(doc, function(key, value) {
+      out(key + ":" + value);
+    });
+  })();
+
+  // reduce test
+  (function() {
+    out("Word count / Reduce test");
+    var key = "foo";
+    var values = [1, 1];
+    var reduced = mmrd.reduce(key, values);
+    out(key + ":" + reduced);
+  })();
+
+  // integration test
+  (function() {
+    out("Word count / Integration test");
+    var docs = [
+      { text: "foo bar baz" },
+      { text: "foo baz baz"}
+    ];
+    var result = mmrd.mapReduce(docs);
+    out(result);
+  })();
+
+});
+	</script>
+</head>
+<body>
+<div id="out"></div>
+</body>
+</html>

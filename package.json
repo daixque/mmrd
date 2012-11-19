@@ -1,6 +1,6 @@
 {
   "name": "mmrd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MongoDB MapReduce Driver",
   "main": "./lib/mmrd.js",
   "scripts": {
