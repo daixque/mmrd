@@ -1,8 +1,12 @@
 mmrd
 ===================================
 mmrd, MongoDB MapReduce Driver, is driver utility for testing Map and Reduce function of MongoDB.
-You can invoke your Map and Reduce functions whether isolated or integrated with.
-mmrd is node.js module. It would behave different from MongoDB in paticular situation because Javascript engine that MongoDB uses is SpiderMonkey rather than V8.
+
+You can invoke your Map and Reduce functions whether isolated or integrated with without MongoDB itself.
+
+### Notice
+
+mmrd is Node.js module. It would behave different from MongoDB in paticular situation because Javascript engine that MongoDB uses is SpiderMonkey rather than V8.
 
 
 ## Installation
