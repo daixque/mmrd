@@ -28,6 +28,7 @@ $(document).ready(function(){
   (function() {
     out("Word count / Map test");
     var doc = { text: "foo bar baz" };
+    mmrd.setMap(map);
     mmrd.map(doc, function(key, value) {
       out(key + ":" + value);
     });
@@ -38,6 +39,7 @@ $(document).ready(function(){
     out("Word count / Reduce test");
     var key = "foo";
     var values = [1, 1];
+    mmrd.setReduce(reduce);
     var reduced = mmrd.reduce(key, values);
     out(key + ":" + reduced);
   })();
@@ -49,8 +51,13 @@ $(document).ready(function(){
       { text: "foo bar baz" },
       { text: "foo baz baz"}
     ];
+    mmrd.setMap(map);
+    mmrd.setReduce(reduce);
     var result = mmrd.mapReduce(docs);
-    out(result);
+    for (var i in result) {
+      var msg = i + ": " + result[i];
+      out(msg);
+    }
   })();
 
 });
