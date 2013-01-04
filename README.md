@@ -1,5 +1,7 @@
 mmrd
 ===================================
+[![Build Status](https://travis-ci.org/daixque/mmrd.png?branch=master)](https://travis-ci.org/daixque/mmrd)
+
 mmrd, MongoDB MapReduce Driver, is driver utility for testing Map and Reduce function of MongoDB.
 
 You can invoke your Map and Reduce functions whether isolated or integrated with without MongoDB itself.
